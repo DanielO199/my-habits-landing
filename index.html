@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyHabits</title>
+
+    <!-- Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        color: white;
+        min-height: 100vh;
+        overflow-x: hidden;
+
+        background-size: cover;
+        background-position: center center;
+        background-image: url('./background.jpg');
+      }
+
+      /* floating blobs */
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.5;
+        animation: floatBlob 12s infinite ease-in-out;
+      }
+
+      .habit-color-name {
+        background: white;
+        color: #7c3aed;
+        padding: 0px 10px;
+        border-radius: 15px;
+      }
+
+      .get-google-play:hover {
+        cursor: pointer;
+      }
+
+      .blob1 {
+        width: 300px;
+        height: 300px;
+        background: #8b5cf6;
+        top: 10%;
+        left: 10%;
+      }
+      .blob2 {
+        width: 250px;
+        height: 250px;
+        background: #6366f1;
+        bottom: 10%;
+        right: 10%;
+        animation-delay: 3s;
+      }
+
+      @keyframes floatBlob {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-40px);
+        }
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 24px;
+        position: relative;
+        z-index: 2;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 20px;
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        animation: fadeDown 1s ease;
+      }
+
+      .logo {
+        font-size: 22px;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0 14px;
+        color: #cbd5f5;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.2s;
+      }
+
+      nav a:hover {
+        color: white;
+      }
+
+      .auth-buttons button {
+        margin-left: 10px;
+        padding: 10px 18px;
+        border-radius: 999px;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: 0.2s;
+      }
+
+      .sign-in {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+      }
+
+      .get-started {
+        color: white;
+        animation: fadeDown 1s ease;
+        transition: 0.3s;
+      }
+
+      .get-started:hover {
+        transform: translateY(-2px) scale(1.03);
+      }
+
+      .hero {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 60px;
+        gap: 60px;
+      }
+
+      .hero-text {
+        max-width: 600px;
+      }
+
+      .badge {
+        display: inline-block;
+        padding: 6px 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        font-size: 12px;
+        margin-bottom: 20px;
+        letter-spacing: 1px;
+        animation: fadeUp 1s ease;
+      }
+
+      h1 {
+        font-size: 68px;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        font-weight: 800;
+        animation: fadeUp 1.2s ease;
+      }
+
+      p {
+        color: #cbd5f5;
+        margin-bottom: 30px;
+        font-size: 16px;
+        animation: fadeUp 1.4s ease;
+      }
+
+      .buttons button {
+        padding: 16px 24px;
+        border-radius: 14px;
+        margin-right: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.25s;
+      }
+
+      .buttons button:hover {
+        transform: translateY(-3px);
+      }
+
+      .ios {
+        background: linear-gradient(135deg, #8b5cf6, #6366f1);
+        box-shadow: 0 10px 30px rgba(139, 92, 246, 0.4);
+        color: white;
+      }
+
+      .android {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+      }
+
+      /* PHONE */
+      .phone {
+        width: 280px;
+        height: 580px;
+        background: #f9fafb;
+        border-radius: 40px;
+        /* padding: 4px; */
+        color: black;
+        box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+        position: relative;
+        /* animation: float 4s ease-in-out infinite; */
+
+        img {
+          border-radius: 20px;
+        }
+      }
+
+      /* @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      } */
+
+      .status {
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+        margin-bottom: 10px;
+        color: #555;
+      }
+
+      .app-title {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+
+      .footer {
+        margin-top: 120px;
+        text-align: center;
+        color: #a5b4fc;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 900px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+        h1 {
+          font-size: 42px;
+        }
+        .phone {
+          margin-top: 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+
+    <div class="container">
+      <header>
+        <div class="logo"><img src="./logo.png" height="50" width="50" />MyHabits</div>
+
+        <div class="auth-buttons">
+          <button class="sign-in">Policy privacy</button>
+          <button class="get-started">Regulations</button>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-text">
+          <div class="badge">TRANSFORM YOUR DAILY ROUTINE</div>
+          <h1>
+            Build Better<br />
+            <span class="habit-color-name">Habits</span>, One<br />Day at a Time
+          </h1>
+          <p>
+            Track your progress, stay motivated, and achieve your goals with MyHabits — the intuitive habit
+            tracker designed for real results.
+          </p>
+          <img src="./google-play.svg" height="100" width="300" class="get-google-play get-started" />
+        </div>
+
+        <div class="phone">
+          <img src="./screen.png" height="560" width="280" />
+        </div>
+      </section>
+
+      <!-- <div class="footer">⭐ 4.9 rating · 50K+ users</div> -->
+    </div>
+  </body>
+</html>

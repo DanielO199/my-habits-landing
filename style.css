@@ -1,0 +1,297 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background-size: cover;
+  background-position: center center;
+  background-image: url('./background.jpg');
+}
+
+/* floating blobs */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: floatBlob 12s infinite ease-in-out;
+}
+
+.habit-color-name {
+  background: white;
+  color: #7c3aed;
+  padding: 0px 10px;
+  border-radius: 15px;
+}
+
+.get-google-play:hover {
+  cursor: pointer;
+}
+
+@keyframes floatBlob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 24px;
+  position: relative;
+  z-index: 2;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-radius: 16px;
+  animation: fadeDown 1s ease;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin: 0 14px;
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  color: white;
+}
+
+.auth-buttons a {
+  margin-left: 10px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sign-in {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.get-started {
+  color: white;
+  animation: fadeDown 1s ease;
+  transition: 0.3s;
+}
+
+.get-started:hover {
+  transform: translateY(-2px) scale(1.03);
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 60px;
+  gap: 60px;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+}
+
+.buttons button {
+  padding: 16px 24px;
+  border-radius: 14px;
+  margin-right: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.buttons button:hover {
+  transform: translateY(-3px);
+}
+
+.phone {
+  width: 290px;
+  height: 545px;
+  background: #f9fafb;
+  border-radius: 30px;
+  color: black;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  border: solid 8px #353434;
+  animation: float 4s ease-in-out infinite;
+
+  img {
+    border-radius: 20px;
+  }
+}
+
+.notch {
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 8px;
+  background: #000;
+  border-radius: 20px;
+  z-index: 3;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.footer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: #a5b4fc;
+}
+
+.avatars {
+  display: flex;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  margin-left: -8px;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.a1 {
+  background: #f472b6;
+}
+.a2 {
+  background: #fbbf24;
+}
+.a3 {
+  background: #4ade80;
+}
+.a4 {
+  background: #22d3ee;
+}
+
+.rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.stars {
+  display: flex;
+  gap: 2px;
+  color: #fbbf24;
+  font-size: 14px;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 2px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  h1 {
+    font-size: 42px;
+  }
+  .phone {
+    margin-top: 40px;
+  }
+}

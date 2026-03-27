@@ -295,3 +295,10 @@ nav a:hover {
     margin-top: 40px;
   }
 }
+
+@media (max-width: 500px) {
+  .auth-buttons a {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
